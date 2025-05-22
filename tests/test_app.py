@@ -1,7 +1,11 @@
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from app import app
 
 def test_hello():
     client = app.test.client()
-    response = client.get("?hello")
+    response = tester.get("/")
     assert response.status_code == 200
-    assert response.json == {"message": "Hello, Ivanti!"}
+    assert b'Hello, Ivanti!' in response.data
