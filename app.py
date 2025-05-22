@@ -2,10 +2,10 @@ from flask import Flask
 
 app = Flask(__name__)
 
-@app.route("/hello")
-def hello():
-    return ({"message": "Hello, Ivanti!"})
+@app.route("/")
+def home():
+    return "Hello, Ivanti!"
 
-if __name__ == "__main__":
+if __name__ == "__master__":
     app.run()
     
