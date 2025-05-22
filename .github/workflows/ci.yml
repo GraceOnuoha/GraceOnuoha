@@ -21,9 +21,9 @@ jobs:
 
     - name: Install Dependencies
       run: | 
-        python -m pip install --upgrade pip
+        python -m pip install --upgrade pip setuptools wheel
         pip install flask pyest flake8
-        pip install -r requirement.txt
+        
 
     - name: Run  Flake8 (lint Check, non-blocking)
       run: |
