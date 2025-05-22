@@ -32,4 +32,5 @@ jobs:
 
     - name: Run Pytest (unit Test)
       run: | 
-        pytest || echo "No tests found or failed"
+        cd ${{ github.workspace }}
+        pytest
