@@ -1,0 +1,27 @@
+trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.x'
+
+- scripts: |
+    python -m pip install --upgrade pip
+    pip install -r requirement.txt
+  displayName: 'Install Dependencies'
+
+- scripts: |
+    flake8 app.py
+  displayName: 'Run flake8 Lint Check'
+
+- scripts: |
+    pytest tests/
+  displayName: 'Run PyTest Unit Test' 
+  
+   
