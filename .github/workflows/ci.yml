@@ -24,7 +24,6 @@ jobs:
         python -m pip install --upgrade pip setuptools wheel
         pip install flask pytest flake8
         
-
     - name: Run  Flake8 (lint Check, non-blocking)
       run: |
         echo "Running Flake8(non-blocking)..."
